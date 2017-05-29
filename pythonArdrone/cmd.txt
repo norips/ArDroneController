@@ -1,0 +1,1 @@
+AT*CONFIG=1,"leds:leds_anim","9,1073741824,3"
