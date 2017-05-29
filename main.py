@@ -20,13 +20,14 @@
 # THE SOFTWARE.
 
 from enum import Enum
-from pprint import pprint
+import pprint
 from pythonArdrone import libardrone
 import curses
 from curses import wrapper
 from time import sleep
 import xbox360_controller
 import pygame
+import logging
 __author__ = "Raphael Druon"
 
 
@@ -51,6 +52,7 @@ def print_navdata(stdscr,navdata):
 
 
 def main(stdscr):
+    logging.basicConfig(filename='test.log',level=logging.DEBUG)
     stdscr.clear()
     curr_y,curr_x = stdscr.getmaxyx()
     while curr_y < min_y or curr_x < min_x:
@@ -211,7 +213,7 @@ def main(stdscr):
                     first_anim+=1
                 elif c == ord('p'):
                     drone.navdata[16] = ""
-                    pprint(drone.navdata)
+                    logging.debug(pprint.pformat(drone.navdata))
                 elif c == ord('m'):
                     break
                 elif c == curses.KEY_RESIZE:
