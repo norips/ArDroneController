@@ -41,10 +41,15 @@ def print_navdata(stdscr,navdata):
     try:
         data = navdata[0]
         stdscr.addstr(0,stdscr.getmaxyx()[1]-len('battery XXX'),'battery ' + str(data['battery']))
-        stdscr.addstr(1,stdscr.getmaxyx()[1]-len('altitude XXX'),'altitude ' + str(data['altitude']))
-        stdscr.addstr(2,stdscr.getmaxyx()[1]-len('phi XXX'),'phi ' + str(data['phi']))
-        stdscr.addstr(3,stdscr.getmaxyx()[1]-len('psi XXX'),'psi ' + str(data['psi']))
-        stdscr.addstr(4,stdscr.getmaxyx()[1]-len('theta XXX'),'theta ' + str(data['theta']))
+        stdscr.clrtoeol()
+        stdscr.addstr(1,stdscr.getmaxyx()[1]-len('altitude XXXXX'),'altitude ' + str(data['altitude']))
+        stdscr.clrtoeol()
+        stdscr.addstr(2,stdscr.getmaxyx()[1]-len('phi XXXXX'),'phi ' + str(data['phi']))
+        stdscr.clrtoeol()
+        stdscr.addstr(3,stdscr.getmaxyx()[1]-len('psi XXXXX'),'psi ' + str(data['psi']))
+        stdscr.clrtoeol()
+        stdscr.addstr(4,stdscr.getmaxyx()[1]-len('theta XXXXX'),'theta ' + str(data['theta']))
+        stdscr.clrtoeol()
     except Exception:
         pass
 
